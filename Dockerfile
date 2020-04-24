@@ -1,5 +1,5 @@
 # Dockerfile with tensorflow gpu support on python3, opencv3.3, dotnet core 3.1
-FROM tensorflow/tensorflow:1.8.0-py3-dotnetcore
+FROM tensorflow/tensorflow:1.8.0-py3
 MAINTAINER Kyle Shankin <kyle.shankin@gmail.com>
 
 # The code below is all based off the repos made by https://github.com/janza/
