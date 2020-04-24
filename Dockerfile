@@ -7,7 +7,7 @@ MAINTAINER Kyle Shankin <kyle.shankin@gmail.com>
 # tensorflow on a gpu.
 
 RUN apt-get update
-RUN apt-get install -y apt-transport-https wget
+RUN apt-get install -y apt-transport-https wget apt-utils
 RUN apt-get update
 
 RUN wget https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
