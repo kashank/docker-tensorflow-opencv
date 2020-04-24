@@ -1,15 +1,19 @@
-# Dockerfile with tensorflow gpu support on python3, opencv3.3
-FROM tensorflow/tensorflow:1.8.0-py3
-MAINTAINER Fergal Cotter <fbc23@cam.ac.uk>
+# Dockerfile with tensorflow gpu support on python3, opencv3.3, dotnet core 3.1
+FROM tensorflow/tensorflow:1.8.0-py3-dotnetcore
+MAINTAINER Kyle Shankin <kyle.shankin@gmail.com>
 
 # The code below is all based off the repos made by https://github.com/janza/
 # He makes great dockerfiles for opencv, I just used a different base as I need
 # tensorflow on a gpu.
+RUN wget https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
 
+RUN apt-get update
+RUN apt-get install -y apt-transport-https
 RUN apt-get update
 
 # Core linux dependencies. 
 RUN apt-get install -y \
+        dotnet-sdk-3.1 \
         build-essential \
         cmake \
         git \
